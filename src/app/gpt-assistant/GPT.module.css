@@ -1,0 +1,104 @@
+.container {
+    padding: var(--spacing-xl) 0;
+    max-width: 800px;
+    margin: 0 auto;
+    height: calc(100vh - 200px);
+    /* Approximate height minus header/footer */
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.title {
+    color: var(--color-navy-blue);
+    margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+    color: var(--color-text-muted);
+}
+
+.chatInterface {
+    flex: 1;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.chatHistory {
+    flex: 1;
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+    background-color: var(--color-off-white);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.message {
+    max-width: 80%;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    line-height: 1.5;
+}
+
+.userMessage {
+    align-self: flex-end;
+    background-color: var(--color-navy-blue);
+    color: var(--color-white);
+    border-bottom-right-radius: 0;
+}
+
+.botMessage {
+    align-self: flex-start;
+    background-color: var(--color-white);
+    color: var(--color-gray-800);
+    border: 1px solid var(--color-gray-200);
+    border-bottom-left-radius: 0;
+}
+
+.inputArea {
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+}
+
+.sendBtn {
+    padding: 0 1.5rem;
+    background-color: var(--color-adf-red);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sendBtn:hover {
+    background-color: #a01825;
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    text-align: center;
+    margin-top: var(--spacing-sm);
+}

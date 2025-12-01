@@ -1,0 +1,100 @@
+.pageContainer {
+    padding: var(--spacing-xl) 0;
+}
+
+.header {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--color-navy-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.searchBox {
+    flex: 1;
+    min-width: 300px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+}
+
+.filters {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.filterSelect {
+    padding: 0.75rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    font-size: 0.95rem;
+}
+
+.viewToggle {
+    display: flex;
+    background: var(--color-gray-100);
+    border-radius: var(--radius-md);
+    padding: 0.25rem;
+}
+
+.toggleBtn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-gray-600);
+}
+
+.toggleBtn.active {
+    background: var(--color-white);
+    color: var(--color-navy-blue);
+    box-shadow: var(--shadow-sm);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.mapPlaceholder {
+    background: var(--color-gray-200);
+    height: 600px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray-600);
+    font-size: 1.5rem;
+    border: 2px dashed var(--color-gray-400);
+}

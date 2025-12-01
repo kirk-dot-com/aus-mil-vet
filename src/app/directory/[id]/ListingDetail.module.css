@@ -1,0 +1,105 @@
+.container {
+    padding: var(--spacing-2xl) 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.backLink {
+    display: inline-block;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.backLink:hover {
+    color: var(--color-navy-blue);
+}
+
+.header {
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: var(--spacing-lg);
+}
+
+.category {
+    display: inline-block;
+    background: rgba(190, 30, 45, 0.1);
+    color: var(--color-adf-red);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--color-navy-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.location {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-2xl);
+}
+
+.mainInfo {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-gray-800);
+}
+
+.sidebar {
+    background: var(--color-off-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    height: fit-content;
+}
+
+.sidebarTitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-navy-blue);
+    border-bottom: 2px solid var(--color-gray-200);
+    padding-bottom: var(--spacing-xs);
+}
+
+.contactItem {
+    margin-bottom: var(--spacing-md);
+}
+
+.contactLabel {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.contactValue {
+    font-weight: 600;
+    color: var(--color-navy-blue);
+    word-break: break-all;
+}
+
+.websiteBtn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}

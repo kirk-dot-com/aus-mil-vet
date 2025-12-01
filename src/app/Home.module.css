@@ -1,0 +1,106 @@
+.section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.bgGray {
+    background-color: var(--color-off-white);
+}
+
+.sectionTitle {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-size: 2.5rem;
+    color: var(--color-navy-blue);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.tile {
+    background: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform 0.2s;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tileIcon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-adf-red);
+}
+
+.tileTitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-navy-blue);
+}
+
+.tileDesc {
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+.aiSection {
+    background-color: var(--color-navy-blue);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.aiContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+}
+
+.blogPreview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.blogCard {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+}
+
+.blogContent {
+    padding: var(--spacing-lg);
+}
+
+.blogDate {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    margin-bottom: var(--spacing-xs);
+}
+
+.blogTitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-navy-blue);
+}
+
+.blogExcerpt {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+}

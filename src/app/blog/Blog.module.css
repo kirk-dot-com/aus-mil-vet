@@ -1,0 +1,103 @@
+.container {
+    padding: var(--spacing-xl) 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--color-navy-blue);
+    margin-bottom: var(--spacing-md);
+}
+
+.subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cardContent {
+    padding: var(--spacing-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardDate {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    margin-bottom: var(--spacing-xs);
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-navy-blue);
+}
+
+.cardExcerpt {
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+    flex: 1;
+}
+
+.readMore {
+    color: var(--color-adf-red);
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+/* Post Detail Styles */
+.postHeader {
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: var(--spacing-lg);
+}
+
+.postMeta {
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-sm);
+}
+
+.postContent {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-gray-800);
+}
+
+.postContent h2 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-navy-blue);
+}
+
+.postContent p {
+    margin-bottom: var(--spacing-md);
+}
