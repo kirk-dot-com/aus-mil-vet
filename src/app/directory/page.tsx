@@ -14,6 +14,7 @@ export default function DirectoryPage() {
     useEffect(() => {
         const fetchServices = async () => {
             const data = await getServices();
+            console.log('DEBUG: Fetched services:', data);
             setServices(data);
         };
         fetchServices();
