@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { getServices } from '@/services/directoryService';
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY || 'mock-key',
@@ -9,18 +10,35 @@ export async function POST(req: Request) {
     try {
         const { messages } = await req.json();
 
+        // fetch directory services for context
+        const services = await getServices();
+        const serviceContext = services.map(s =>
+            `- ${s.name} (${s.category}): ${s.description}. Contact: ${s.phone || 'N/A'}, ${s.location}`
+        ).join('\n');
+
+        const systemPrompt = `You are a helpful assistant for Australian Military Veterans. 
+You provide region-aware advice on entitlements, transition pathways, and support services. 
+Your tone is trusted, experienced, and care-focused. 'No Ranks. No Red Tape.'
+
+IMPORTANT: You have access to the following trusted Directory Services. 
+ALWAYS recommend them when relevant to the user's query:
+
+${serviceContext}
+
+If the user asks for help that matches one of these services, provide the name and contact details explicitly.`;
+
         if (!process.env.OPENAI_API_KEY) {
             // Return mock response if no key is present
             return NextResponse.json({
                 role: 'assistant',
-                content: "[MOCK RESPONSE] I am the Australian Military Veteran Assistant. I can help you with entitlements, transition support, and local services. (Configure OPENAI_API_KEY to get real AI responses)"
+                content: "[MOCK RESPONSE] I see you're looking for support. Based on my directory, I can recommend Open Arms (1800 011 046) for 24/7 counselling or RSL Queensland (133 775) for welfare support. (Configure OPENAI_API_KEY to get real AI responses)"
             });
         }
 
         const completion = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
             messages: [
-                { role: "system", content: "You are a helpful assistant for Australian Military Veterans. You provide region-aware advice on entitlements, transition pathways, and support services. Your tone is trusted, experienced, and care-focused. 'No Ranks. No Red Tape.'" },
+                { role: "system", content: systemPrompt },
                 ...messages
             ],
         });
