@@ -71,7 +71,7 @@ const MOCK_SERVICES: ServiceListing[] = [
     }
 ];
 
-const USE_MOCK = false; // Toggle this to false when ready to use real Firebase data
+const USE_MOCK = true; // Toggle this to false when ready to use real Firebase data
 
 export const getServices = async (): Promise<ServiceListing[]> => {
     if (USE_MOCK) {
