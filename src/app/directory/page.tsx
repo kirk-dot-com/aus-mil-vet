@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import ServiceCard from '@/components/ServiceCard';
+import MapComponent from '@/components/MapComponent';
 import styles from './Directory.module.css';
 import { getServices, ServiceListing } from '@/services/directoryService';
 
@@ -82,8 +83,8 @@ export default function DirectoryPage() {
                     ))}
                 </div>
             ) : (
-                <div className={styles.mapPlaceholder}>
-                    Google Maps Integration Placeholder
+                <div className={styles.mapContainer}>
+                    <MapComponent services={filteredServices} />
                 </div>
             )}
         </div>

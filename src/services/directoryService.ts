@@ -11,6 +11,8 @@ export interface ServiceListing {
     website?: string;
     email?: string;
     address?: string;
+    latitude?: number;
+    longitude?: number;
 }
 
 // Mock Data
@@ -73,11 +75,14 @@ const MOCK_SERVICES: ServiceListing[] = [
 
 const USE_MOCK = true; // Toggle this to false when ready to use real Firebase data
 
-export const getServices = async (): Promise<ServiceListing[]> => {
-    if (USE_MOCK) {
-        return MOCK_SERVICES;
-    }
+import { PROCESSED_SERVICES } from '@/data/servicesData';
 
+export const getServices = async (): Promise<ServiceListing[]> => {
+    // If you still want to mock for development without Firebase:
+    if (true) { // or toggle based on env
+        return PROCESSED_SERVICES;
+    }
+    // ... firebase logic ...
     try {
         const querySnapshot = await getDocs(collection(db, "directory_listings"));
         return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as ServiceListing));
@@ -88,6 +93,10 @@ export const getServices = async (): Promise<ServiceListing[]> => {
 };
 
 export const getServiceById = async (id: string): Promise<ServiceListing | null> => {
+    // Check processed data first
+    const localService = PROCESSED_SERVICES.find(s => s.id === id);
+    if (localService) return localService;
+
     if (USE_MOCK) {
         return MOCK_SERVICES.find(s => s.id === id) || null;
     }
