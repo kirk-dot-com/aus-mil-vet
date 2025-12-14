@@ -74,7 +74,21 @@ const MapComponent: React.FC<MapComponentProps> = ({ services }) => {
                             <h4 style={{ margin: '0 0 0.5rem 0', color: 'var(--color-navy-blue)' }}>{selectedService.name}</h4>
                             <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.9rem' }}>{selectedService.category}</p>
                             <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.8rem', color: '#666' }}>{selectedService.address}</p>
-                            {selectedService.phone && <p style={{ margin: 0, fontSize: '0.8rem' }}>📞 {selectedService.phone}</p>}
+                            {selectedService.phone && (
+                                <p style={{ margin: '0 0 0.25rem 0', fontSize: '0.8rem' }}>
+                                    📞 <a href={`tel:${selectedService.phone.replace(/\s/g, '')}`}>{selectedService.phone}</a>
+                                </p>
+                            )}
+                            {selectedService.email && (
+                                <p style={{ margin: '0 0 0.25rem 0', fontSize: '0.8rem' }}>
+                                    ✉️ <a href={`mailto:${selectedService.email}`}>{selectedService.email}</a>
+                                </p>
+                            )}
+                            {selectedService.website && (
+                                <p style={{ margin: 0, fontSize: '0.8rem' }}>
+                                    🌐 <a href={selectedService.website.startsWith('http') ? selectedService.website : `https://${selectedService.website}`} target="_blank" rel="noopener noreferrer">Website</a>
+                                </p>
+                            )}
                         </div>
                     </InfoWindow>
                 )}
